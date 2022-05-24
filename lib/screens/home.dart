@@ -59,14 +59,11 @@ class _HomeScreenState extends State<HomeScreen> {
               itemCount: tareas.lista.length,
               onReorder: (int oldIndex, int newIndex) { 
                 setState(() {
-                  print('old $oldIndex');
-                  print('new $newIndex');
                   if (oldIndex < newIndex) {
                     newIndex -= 1;
                   }
                   final Task task = tareas.lista.removeAt(oldIndex);
                   tareas.lista.insert(newIndex, task);
-                  // print(tareas.lista);
                   datos.saveData(tareas);
                 });
               },
