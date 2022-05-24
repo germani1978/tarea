@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:notas/screens/home.dart';
+import 'package:notas/screens/screens.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,22 +12,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       home: HomeScreen(),
-      // theme: ThemeCustom(),
-    );
-  }
-
-  ThemeData ThemeCustom() {
-    return ThemeData().copyWith(
-      appBarTheme: AppBarTheme(
-        // backgroundColor: Colors.black12,
-        elevation: 0,
-        titleTextStyle: TextStyle(
-          // color: Colors.black54,
-          fontWeight: FontWeight.w600,
-          fontSize: 22,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: AppBarTheme(
+          color: Colors.black,
+          elevation: 0,
         ),
+        // appBarTheme: AppBarTheme(
+        //   color: Colors.black26,
+        //   elevation: 0,
+        // ),
       ),
-    );    
+    );
   }
 
 }

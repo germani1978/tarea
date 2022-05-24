@@ -3,6 +3,11 @@ class Task {
   String task;
   bool realizada;
 
+  @override
+ String toString() {
+   return task;
+ }
+
   //constructor
   Task({required this.task, this.realizada = false});
 
@@ -11,19 +16,24 @@ class Task {
 
 }
 
-class ListaTareas {
+class Tareas {
   //propiedades
-  late List<Task> listaTareas;
+  late List<Task> lista;
+
+ @override
+ String toString() {
+   return lista.toString();
+ }
 
   //constructor
-  ListaTareas(this.listaTareas);
-  ListaTareas.fromMap(List<Map<String, dynamic>> listMap ){
-    listaTareas = listMap.map((task) => Task( task: task['task'], realizada: task['realizada']) ).toList();
+  Tareas(this.lista);
+  Tareas.fromMap(List<Map<String, dynamic>> listMap ){
+    lista = listMap.map((task) => Task( task: task['task'], realizada: task['realizada']) ).toList();
   }
 
 
   //metodos
-  List<Map<String, dynamic>> toMap() => listaTareas.map((task) => task.toMap()).toList();
-  agregaElem(String elem) => listaTareas.add(Task(task: elem));
-  eliminaElemIndex(int index) =>listaTareas.removeAt(index);
+  List<Map<String, dynamic>> toMap() => lista.map((task) => task.toMap()).toList();
+  agregaElem(String elem) => lista.add(Task(task: elem));
+  eliminaElemIndex(int index) =>lista.removeAt(index);
 }
