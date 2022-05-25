@@ -1,5 +1,3 @@
-
-
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:notas/model/task.dart';
 import 'dart:convert';
@@ -22,8 +20,4 @@ class Datos {
   Future saveData( Tareas tareas) async {
     await storage.write(key: 'lista', value: json.encode(tareas.toMap()));
   }
-  // Future saveData(String str) async {
-  //   await storage.write(key: 'lista', value: str);
-  // }
-  
 }
