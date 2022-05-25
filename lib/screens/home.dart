@@ -2,6 +2,8 @@
 
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notas/bloc/tarea_bloc.dart';
 import 'package:notas/model/task.dart';
 import 'package:notas/screens/screens.dart';
 import 'package:notas/services/datosLocal.dart';
@@ -25,6 +27,8 @@ class _HomeScreenState extends State<HomeScreen> {
   late Tareas tareas;
 
   void inicioDatos() async {
+
+    final tareasBloc = BlocProvider.of<TareaBloc>(context);
 
     datos = Datos();
     datosCargados = Datos.yaTieneDatos;

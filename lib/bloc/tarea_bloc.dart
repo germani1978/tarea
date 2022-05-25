@@ -8,11 +8,13 @@ part 'tarea_state.dart';
 class TareaBloc extends Bloc<TareaEvent, TareaState> {
   TareaBloc() : super(TareaInitial()) {
 
+    on<cargarTareas>((event, emit) {});
+
     on<agregarTarea>((event, emit) {});
 
     on<eliminarTarea>((event, emit) {});
 
     on<interCambiaPos>((event, emit) {});
-    
+
   }
 }

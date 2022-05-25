@@ -3,6 +3,8 @@ part of 'tarea_bloc.dart';
 @immutable
 abstract class TareaEvent {}
 
+class cargarTareas extends TareaEvent {}
+
 class agregarTarea extends TareaEvent {
   final Task tarea;
   agregarTarea(this.tarea);
