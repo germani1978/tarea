@@ -1,21 +1,17 @@
 part of 'tarea_bloc.dart';
 
-@immutable
+
 abstract class TareaState {
-  bool isLoading = true;
-  Tareas? tareas;
+    Tareas? tareas;
+    TareaState({this.tareas});
 }
 
-class TareaInitial extends TareaState {
-  TareaInitial() {
-    isLoading = true;
-  }
-}
+class TareaInitial extends TareaState {}
 
-class SetTarea extends TareaState {
-  Tareas setTarea;
-  SetTarea({required this.setTarea}) {
-    tareas = setTarea;
-    isLoading = false;
+class TareaLoad extends TareaState {
+  final Tareas tareasNew;
+  TareaLoad({required this.tareasNew}){
+    tareas = tareasNew;
+    print(tareas);
   }
 }

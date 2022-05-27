@@ -6,7 +6,7 @@ abstract class TareaEvent {}
 class cargarTareas extends TareaEvent {}
 
 class agregarTarea extends TareaEvent {
-  final Task tarea;
+  final String tarea;
   agregarTarea(this.tarea);
 
 }
@@ -20,4 +20,9 @@ class eliminarTarea extends TareaEvent {
 class interCambiaPos extends TareaEvent {
   final int oldIndex, newIndex;
   interCambiaPos(this.oldIndex, this.newIndex);
+}
+
+class invertStateTarea extends TareaEvent {
+  final int index;
+  invertStateTarea(this.index);
 }

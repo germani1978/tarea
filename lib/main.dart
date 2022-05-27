@@ -12,22 +12,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider( create: (context) => TareaBloc() ),
+        BlocProvider( create: (context) => TareaBloc()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Material App',
         home: HomeScreen(),
         theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
+          scaffoldBackgroundColor: Colors.green[30],
           appBarTheme: AppBarTheme(
-            color: Colors.black,
-            elevation: 0,
-          ),
-          // appBarTheme: AppBarTheme(
-          //   color: Colors.black26,
-          //   elevation: 0,
-          // ),
+            backgroundColor: Color(0xA10129F1),
+            // color: Colors.black,
+            // elevation: 0,
+          ),  
         ),
       ),
     );

@@ -4,14 +4,17 @@ import 'dart:convert';
 
 class Datos {
 
-  static bool yaTieneDatos = false;
+  Datos._private();
+  static final Datos _instance = Datos._private();
+  factory Datos() { return _instance; }
+  
   late FlutterSecureStorage storage;
 
   Future<Tareas> cargarTareas() async {
-     yaTieneDatos = false; 
+    //  yaTieneDatos = false; 
      storage = FlutterSecureStorage();
      final rs = await storage.read(key: 'lista');
-     yaTieneDatos = true;
+    //  yaTieneDatos = true;
      if (rs == null)  return Tareas([]);
      final aux = (json.decode(rs) as List).map((e) => e as Map<String,dynamic>).toList();
      return Tareas.fromMap(aux);  

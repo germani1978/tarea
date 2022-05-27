@@ -18,7 +18,7 @@ class Task {
 
 class Tareas {
   //propiedades
-  late List<Task> lista;
+ List<Task> lista = [];
 
  @override
  String toString() {
@@ -29,6 +29,9 @@ class Tareas {
   Tareas(this.lista);
   Tareas.fromMap(List<Map<String, dynamic>> listMap ){
     lista = listMap.map((task) => Task( task: task['task'], realizada: task['realizada']) ).toList();
+  }
+  Tareas copyWith() {
+    return Tareas(this.lista.map((e) => e).toList());
   }
 
 
