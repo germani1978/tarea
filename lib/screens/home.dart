@@ -20,8 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
   void inicioDatos() {
     final tareasBloc = BlocProvider.of<TareaBloc>(context);
     tareasBloc.add(cargarTareas());
-    print('ya');
-    
   }
   
   @override
@@ -119,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return ListTile(
       // leading: Text('$index',style: fontGoogle( color:  Color(0xA10129F1) )),
-      title: Text('$index   ${listaTareas[index].task}',
+      title: Text('${listaTareas[index].task}',
           style:!listaTareas[index].realizada ? StyleTextUno() : StyleTextDos()),
       trailing: IconButton(
         icon: Icon(Icons.delete, color: Color.fromARGB(255, 161, 173, 180),), 
