@@ -187,8 +187,11 @@ class btnAddText extends StatelessWidget {
 
     return ElevatedButton(
         onPressed: ()  {
-           tareasBloc.add( agregarTarea( textController.text.trim()) );
-          Navigator.pop(context);
+          final val = textController.text.trim();  
+          if (val.length > 0)    {
+            tareasBloc.add( agregarTarea( textController.text.trim()) );
+            Navigator.pop(context);
+          }
         },
         child: Text('Agregar', style: fontGoogle( size: 12, spacing: 0.5, weight: FontWeight.w600)),
         style: ButtonStyle(backgroundColor:MaterialStateProperty.all(Colors.black)));
